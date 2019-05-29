@@ -7,7 +7,7 @@ var tableData = data;
 
 
 
-function populateTable(){
+function createTable(){
     var tbody = d3.select("tbody");
     tbody.remove();
     var table = d3.select("#ufo-table");
@@ -23,64 +23,70 @@ function populateTable(){
 }
   
 
-var filterTableButton = d3.select("#filter-btn");
+var searchButton = d3.select("#filter-btn");
 
-filterTableButton.on("click", function() {
+searchButton.on("click", function() {
 
 
     d3.event.preventDefault();
   
 
-    var dateValue = d3.select("#datetime").property("value");
-    var cityName = d3.select("#cityname").property("value");
-    var stateValue = d3.select('#statename').property("value");
-    var countryValue = d3.select('#countryname').property("value");
-    var shapeValue = d3.select('#shapename').property("value");
+    var dateSearch = d3.select("#datetime").property("value");
+    var citySearch = d3.select("#citySearch").property("value");
+    var stateSearch = d3.select('#statename').property("value");
+    var countrySearch = d3.select('#countryname').property("value");
+    var shapeSearch = d3.select('#shapename').property("value");
 
-    if (dateValue != "" ){
-        tableData = data.filter(event => event.datetime === dateValue);
+    if (dateSearch != "" ){
+        tableData = data.filter(event => event.datetime === dateSearch);
     } else {
         tableData = data;}
 
-    if (cityName != "" ){
-        tableData = tableData.filter(event => event.city === cityName);
+    if (citySearch != "" ){
+        tableData = tableData.filter(event => event.city === citySearch);
     } else {
         tableData;}
 
-    if (stateValue != "" ){
-        tableData = tableData.filter(event => event.state === stateValue);
+    if (stateSearch != "" ){
+        tableData = tableData.filter(event => event.state === stateSearch);
     } else {
         tableData;}
 
-    if (countryValue != "" ){
-        tableData = tableData.filter(event => event.country === countryValue);
+    if (countrySearch != "" ){
+        tableData = tableData.filter(event => event.country === countrySearch);
     } else {
         tableData;}
 
-    if (shapeValue != "" ){
-        tableData = tableData.filter(event => event.shape === shapeValue);
+    if (shapeSearch != "" ){
+        tableData = tableData.filter(event => event.shape === shapeSearch);
     } else {
         tableData;}
-    populateTable();
+    createTable();
 });  
 
 
-var stateOptions = Array.from(new Set(data.map(item=>item.state)));
-stateOptions.unshift("");
+// TODO: UPPERCASE STATE SO THE DROPDOWN IS IN ALL CAPS AND NOT LOWERCASE (AS IT COMES FROM DATA.JS)
+
+var statesInDatabase = Array.from(new Set(data.map(item=>item.state)));
+statesInDatabase.unshift("");
 var stateList = d3.select("#statename");
-stateList.selectAll('option').data(stateOptions).enter()
+stateList.selectAll('option').data(statesInDatabase).enter()
         .append('option').attr("value", function (d) { return d; }).text(function(d){ return d;});
 
 
-var countryOptions = Array.from(new Set(data.map(item=>item.country)));
-countryOptions.unshift("");
+// TODO: PROPERLY CAPITALIZE COUNTRY IN THE DROPDOWN, NOT LOWERCASE (AS IT COMES FROM DATA.JS)
+
+var countriesInDatabase = Array.from(new Set(data.map(item=>item.country)));
+countriesInDatabase.unshift("");
 var countryList = d3.select("#countryname");
-countryList.selectAll('option').data(countryOptions).enter()
+countryList.selectAll('option').data(countriesInDatabase).enter()
         .append('option').attr("value", function (d) { return d; }).text(function(d){ return d;});
 
 
-var shapeOptions = Array.from(new Set(data.map(item=>item.shape)));
-shapeOptions.unshift("");
+// TODO: PROPERLY CAPITALIZE SHAPE IN THE DROPDOWN, NOT LOWERCASE (AS IT COMES FROM DATA.JS)
+
+var shapesInDatabase = Array.from(new Set(data.map(item=>item.shape)));
+shapesInDatabase.unshift("");
 var shapeList = d3.select("#shapename");
-shapeList.selectAll('option').data(shapeOptions).enter()
+shapeList.selectAll('option').data(shapesInDatabase).enter()
         .append('option').attr("value", function (d) { return d; }).text(function(d){ return d;});
