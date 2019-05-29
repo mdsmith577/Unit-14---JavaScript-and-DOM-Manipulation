@@ -8,16 +8,44 @@
     height: 100%;
     padding: 0;
     margin: 0;
+    background: #9cbb45;
   }
   
+  .col-md-10 {
+    border-color: #000100;
+  }
 
   .wrapper {
     position: relative;
     min-height: 100%;
     padding-bottom: 130px;
     overflow: auto;
+    background: #9cbb45;
   }
   
+
+  .list-group-item {
+    background-color: #31993f;
+  }
+
+
+  .panel-body {
+    background-color: #214e06;
+  }
+
+  .panel-default>.panel-heading {
+    background-color: #214e06;
+  }
+
+  .container-fluid {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* min-height: 100px; */
+    background: #31993f;
+  }
+
   /* at the bottom of the page */
   .footer {
     position: absolute;
@@ -25,7 +53,7 @@
     bottom: 0;
     left: 0;
     min-height: 100px;
-    background: #4e5d6c;
+    background: #31993f;
   }
   
   /* The code styles the text at the bottom of the footer */
@@ -35,7 +63,7 @@
     bottom: 0;
     left: 0;
     padding: 5px;
-    background: #1b3146;
+    background: #214e06;
   }
   
   .navbar {
@@ -69,7 +97,7 @@
     display: block;
     width: 100%;
     padding: 8px;
-    color: #8caac4;
+    color: #214e06;
     outline: none;
   }
   
@@ -100,7 +128,7 @@
     background: rgb(2, 100, 51);
     background-image: url("../images/toy-story-aliens1.png");
     background-attachment: fixed;
-    background-position: bottom center;
+    background-position: top center;
     /* background-size: cover */
     background-size: 1000px 285px;
   }
@@ -121,22 +149,22 @@
   /* input placeholder color changes */
   .form-control::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: #8caac4;
+    color: #31993f;
   }
   
   .form-control::-moz-placeholder {
     /* Firefox 19+ */
-    color: #8caac4;
+    color: #31993f;
   }
   
   .form-control:-ms-input-placeholder {
     /* IE 10+ */
-    color: #8caac4;
+    color: #31993f;
   }
   
   .form-control:-moz-placeholder {
     /* Firefox 18- */
-    color: #8caac4;
+    color: #31993f;
   }
   
   /* media queries which will only be activated at specific screen sizes */
@@ -154,7 +182,7 @@
     #table-area tr td:first-child {
       font-size: 1.8em;
       font-weight: bold;
-      background: #29557e;
+      background: #214e06;
     }
   
     #table-area tr td:last-child {
@@ -167,7 +195,7 @@
       height: 1px;
       margin-top: 20px;
       content: " ";
-      background: rgb(36, 5, 172);
+      background: #214e06;
     }
   
     #table-area td {
@@ -177,6 +205,7 @@
     #table-area tbody td {
       display: block;
       text-align: center;
+      background-color: #026433;
     }
   
     #table-area tbody td::before {
@@ -185,8 +214,21 @@
       font-weight: bold;
       text-align: center;
       content: attr(data-th);
+      background-color: #026433;
     }
-  
+
+    .table-area thead {
+      background-color: #026433;
+    }
+    
+    .tbody tr:nth-of-type(odd) {
+      background-color: #026433;
+    }
+
+    .tbody {
+      background-color: #026433;
+    }
+
     .hero h1 {
       animation: smaller-title 1.2s forwards linear;
     }
