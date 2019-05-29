@@ -97,11 +97,12 @@
     height: 200px;
     padding: 20px;
     margin: 0;
-    background: black;
-    background-image: url("../images/ufo-high-res.jpg");
+    background: rgb(2, 100, 51);
+    background-image: url("../images/toy-story-aliens1.png");
     background-attachment: fixed;
     background-position: bottom center;
-    background-size: cover;
+    /* background-size: cover */
+    background-size: 1000px 285px;
   }
   
   .hero h1 {
@@ -212,7 +213,7 @@
     to {
       font-size: 5.5rem;
       opacity: 1;
-    
+      
     }
   }
   
