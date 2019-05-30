@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Ubuntu, sans-serif;
+    /* font-family: Ubuntu, sans-serif; */
   }
   
   html,
@@ -234,6 +234,36 @@
     }
   }
   
+  #ufo-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: black    
+  }
+  
+  #ufo-table td, #ufo-table th {
+    /* border: 1px solid #214e06; */
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #ufo-table tr:nth-child(even){background-color: #cdc8c2;}
+  #ufo-table tr:nth-child(odd){background-color: #aaa59f;}
+
+  #ufo-table tr:hover {background-color: #31993f;
+    color: white
+
+  }
+
+  #ufo-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #214e06;
+    color: white
+  }
+  
+
   /* keyframe animations which will be used to animate the title */
   @keyframes title {
     from {
